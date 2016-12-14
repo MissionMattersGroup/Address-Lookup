@@ -11,7 +11,7 @@ public class LookupConfigController {
 	public List<SelectOption> fieldList { get; set; }
 
 	public LookupConfigController() {
-
+		populateObjectList();
 	}
 
 	public void populateObjectList () {

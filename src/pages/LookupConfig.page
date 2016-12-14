@@ -1,3 +1,44 @@
-<apex:page showHeader="true" sidebar="true">
-	
+<apex:page controller = "LookupConfigController">
+	<apex:form id = "formatAddressLookupFields">
+		<apex:pageBlock title="My Content" mode ="edit">
+  		<apex:pageBlockSection title ="My Content Section" columns="2">
+				<apex:pageBlockSectionItem>
+					<apex:outputLabel value = "County Field" for = "county_field"/>
+					<apex:selectList value = "{!countyField}" multiselect = "false" size = "1" id = "county_field">
+					</apex:selectList>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem>
+					<apex:outputLabel value = "Object Name" for = "object_name"/>
+					<apex:selectList value = "{!objectName}" multiselect="false" size="1" id = "object_name">
+            <apex:selectOptions value = "{!objectList}"/>
+        	</apex:selectList>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem>
+					<apex:outputLabel value = "State Field" for = "state_field"/>
+					<apex:selectList value = "{!stateField}" multiselect = "false" size = "1" id = "state_field">
+					</apex:selectList>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem>
+					<apex:outputLabel value = "Street Address Field" for = "street_address_field"/>
+					<apex:selectList value = "{!streetField}" multiselect = "false" size = "1" id = "street_address_field">
+					</apex:selectList>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem>
+					<apex:outputLabel value = "Street Address Field" for = "street_address_field"/>
+					<apex:selectList value = "{!streetField}" multiselect = "false" size = "1" id = "street_address_field">
+					</apex:selectList>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem>
+					<apex:outputLabel value = "City Field" for = "city_field"/>
+					<apex:selectList value = "{!cityField}" multiselect = "false" size = "1" id = "city_field">
+					</apex:selectList>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem>
+					<apex:outputLabel value = "Zip Code Field" for = "zip_code_field"/>
+					<apex:selectList value = "{!zipField}" multiselect = "false" size = "1" id = "zip_code_field">
+					</apex:selectList>
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
 </apex:page>
