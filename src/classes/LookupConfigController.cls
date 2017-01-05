@@ -12,6 +12,7 @@ public class LookupConfigController {
 
 	public LookupConfigController() {
 		populateObjectList();
+		objectName='';
 	}
 
 	public void populateObjectList () {
@@ -21,15 +22,16 @@ public class LookupConfigController {
 			objectList.add(so);
 		}
 	}
-	public void populateFieldList() {
+	public PageReference populateFieldList() {
 		fieldList = new List<SelectOption>();
 		Schema.SObjectType soType = gd.get(objectName);
 		DescribeSObjectResult dsr = soType.getDescribe();
 		Map<String, Schema.SObjectField> fieldMap = dsr.fields.getMap();
 		for (string fieldApiName : fieldMap.keySet()) {
-			SelectOption fso = new SelectOption(fieldApiName, fieldMap.get(objectName).getDescribe().getLabel());
+			SelectOption fso = new SelectOption(fieldApiName, fieldMap.get(fieldApiName).getDescribe().getLabel());
 			fieldList.add(fso);
 		}
+			return null;
 	}
 
 }
